@@ -26,6 +26,22 @@ Then open:
 http://127.0.0.1:51236/
 ```
 
+## GitHub Pages
+
+The repository includes a GitHub Actions workflow for Pages deployment.
+
+Published site URL:
+
+```text
+https://evgvolnov.github.io/hr-startups/
+```
+
+If the first deployment does not start automatically, open repository settings and select:
+
+```text
+Settings -> Pages -> Source -> GitHub Actions
+```
+
 ## Regenerating Data
 
 The checked-in `graph-data.js` is already generated. To regenerate it, place the master taxonomy workbook at:
