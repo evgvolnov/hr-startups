@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Future Of Work Startups</title>
+    <meta
+      name="description"
+      content="Interactive HRTech startup investment and M&A map by year, quarter, investment size, tags, and domains."
+    />
+    <link rel="icon" href="https://assets.super.so/e899c348-a5f1-44d5-be02-6f8ab32930e3/uploads/favicon/be8fc39f-fb07-41e5-9eba-b2c39fb9bc8f.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=filter-panel-padding-17" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="graph-stage">
+        <canvas id="graphCanvas" aria-label="Карта HRTech-сделок"></canvas>
+        <header class="topbar">
+          <div class="brand-block hrtech-brand">
+            <img
+              class="brand-logo"
+              src="https://assets.super.so/e899c348-a5f1-44d5-be02-6f8ab32930e3/uploads/logo/d0fb7f11-e019-47bc-849d-46b2284e4d57.png"
+              alt="The Future Of Work"
+            />
+            <p id="graphStats">Загрузка...</p>
+          </div>
+        </header>
+        <div id="tooltip" class="tooltip" hidden></div>
+        <footer class="bottom-filters" aria-label="Фильтры">
+          <div class="filter-panel">
+            <div class="filter-row">
+              <div class="filter-group grow">
+                <span class="filter-label">Размер инвестиций</span>
+                <div id="amountFilters" class="horizontal-chips"></div>
+              </div>
+              <button id="clearFilters" class="reset-button" type="button">Сброс</button>
+            </div>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script>
+      window.__HRTECH_ERROR = null;
+      window.onerror = function (message, source, line, column, error) {
+        window.__HRTECH_ERROR = { message: String(message), source, line, column, stack: error && error.stack };
+      };
+      window.onunhandledrejection = function (event) {
+        window.__HRTECH_ERROR = { message: String(event.reason), stack: event.reason && event.reason.stack };
+      };
+    </script>
+    <script src="./graph-data.js?v=no-same-company-1"></script>
+    <script src="./app.js?v=filter-panel-padding-17"></script>
+  </body>
+</html>
